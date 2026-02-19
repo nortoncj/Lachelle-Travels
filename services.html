@@ -1,0 +1,853 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Services | Lachelle's Adventures and Travels</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Open+Sans:wght@400;600&family=Playfair+Display:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      :root {
+        --ocean-teal: #4a9b9b;
+        --deep-sea: #2c5f5f;
+        --aqua-blue: #7bc4c4;
+        --crisp-white: #ffffff;
+        --warm-sand: #f5f1e8;
+        --coral-accent: #ff7f7f;
+        --spacing-base: 8px;
+        --section-spacing: 80px;
+        --element-spacing: 24px;
+      }
+
+      body {
+        font-family: "Open Sans", sans-serif;
+        color: #333;
+        overflow-x: hidden;
+        background: var(--crisp-white);
+      }
+
+      /* Navigation */
+      nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        z-index: 1000;
+        padding: 20px 0;
+        box-shadow: 0 2px 20px rgba(44, 95, 95, 0.1);
+      }
+
+      .nav-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 24px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        font-family: "Montserrat", sans-serif;
+        font-weight: 700;
+        font-size: 24px;
+        color: var(--ocean-teal);
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .logo::before {
+        content: "⛵";
+        font-size: 28px;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 32px;
+        list-style: none;
+      }
+
+      .nav-links a {
+        text-decoration: none;
+        color: var(--deep-sea);
+        font-weight: 600;
+        transition: color 0.3s ease;
+      }
+
+      .nav-links a:hover {
+        color: var(--ocean-teal);
+      }
+
+      /* Hero Section */
+      .hero {
+        position: relative;
+        height: 70vh;
+        min-height: 500px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        margin-top: 70px;
+      }
+
+      .hero-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(
+          135deg,
+          #7bc4c4 0%,
+          #4a9b9b 50%,
+          #2c5f5f 100%
+        );
+        opacity: 0.9;
+      }
+
+      .hero-pattern {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image:
+          radial-gradient(
+            circle at 20% 50%,
+            rgba(255, 255, 255, 0.1) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            circle at 80% 80%,
+            rgba(255, 255, 255, 0.1) 0%,
+            transparent 50%
+          );
+        animation: wave 20s ease-in-out infinite;
+      }
+
+      @keyframes wave {
+        0%,
+        100% {
+          transform: translateY(0) scale(1);
+        }
+        50% {
+          transform: translateY(-20px) scale(1.05);
+        }
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 2;
+        text-align: center;
+        color: var(--crisp-white);
+        max-width: 800px;
+        padding: 0 24px;
+        animation: fadeInUp 1s ease-out;
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .hero h1 {
+        font-family: "Playfair Display", serif;
+        font-size: 64px;
+        font-weight: 700;
+        margin-bottom: 24px;
+        line-height: 1.2;
+        text-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      .hero-subtitle {
+        font-size: 20px;
+        font-weight: 300;
+        margin-bottom: 40px;
+        opacity: 0.95;
+      }
+
+      /* Services Grid */
+      .services-section {
+        padding: var(--section-spacing) 24px;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .section-intro {
+        text-align: center;
+        max-width: 700px;
+        margin: 0 auto 60px;
+      }
+
+      .section-intro h2 {
+        font-family: "Montserrat", sans-serif;
+        font-size: 42px;
+        font-weight: 700;
+        color: var(--deep-sea);
+        margin-bottom: 16px;
+      }
+
+      .section-intro p {
+        font-size: 18px;
+        color: #666;
+        line-height: 1.6;
+      }
+
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 32px;
+        margin-bottom: 80px;
+      }
+
+      .service-card {
+        background: var(--crisp-white);
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 12px rgba(44, 95, 95, 0.1);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+      }
+
+      .service-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, var(--aqua-blue), var(--ocean-teal));
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.4s ease;
+      }
+
+      .service-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 8px 24px rgba(44, 95, 95, 0.15);
+      }
+
+      .service-card:hover::before {
+        transform: scaleX(1);
+      }
+
+      .service-icon {
+        padding: 40px 32px 24px;
+        text-align: center;
+        background: linear-gradient(
+          135deg,
+          rgba(123, 196, 196, 0.1) 0%,
+          rgba(74, 155, 155, 0.05) 100%
+        );
+      }
+
+      .service-icon-emoji {
+        font-size: 64px;
+        display: inline-block;
+        animation: float 3s ease-in-out infinite;
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+      }
+
+      .service-card:nth-child(1) .service-icon-emoji {
+        animation-delay: 0s;
+      }
+      .service-card:nth-child(2) .service-icon-emoji {
+        animation-delay: 0.3s;
+      }
+      .service-card:nth-child(3) .service-icon-emoji {
+        animation-delay: 0.6s;
+      }
+      .service-card:nth-child(4) .service-icon-emoji {
+        animation-delay: 0.9s;
+      }
+
+      .service-content {
+        padding: 24px 32px 40px;
+      }
+
+      .service-content h3 {
+        font-family: "Montserrat", sans-serif;
+        font-size: 24px;
+        font-weight: 700;
+        color: var(--deep-sea);
+        margin-bottom: 16px;
+      }
+
+      .service-content p {
+        font-size: 16px;
+        line-height: 1.7;
+        color: #666;
+        margin-bottom: 24px;
+      }
+
+      .service-features {
+        list-style: none;
+        margin-bottom: 24px;
+      }
+
+      .service-features li {
+        padding: 8px 0;
+        color: #555;
+        position: relative;
+        padding-left: 28px;
+      }
+
+      .service-features li::before {
+        content: "✓";
+        position: absolute;
+        left: 0;
+        color: var(--ocean-teal);
+        font-weight: bold;
+        font-size: 18px;
+      }
+
+      .service-btn {
+        display: inline-block;
+        background: var(--ocean-teal);
+        color: var(--crisp-white);
+        text-decoration: none;
+        padding: 12px 24px;
+        border-radius: 4px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        border: 2px solid var(--ocean-teal);
+      }
+
+      .service-btn:hover {
+        background: var(--deep-sea);
+        border-color: var(--deep-sea);
+        transform: translateX(4px);
+      }
+
+      /* Premium Feature Section */
+      .premium-section {
+        background: linear-gradient(135deg, #2c5f5f 0%, #4a9b9b 100%);
+        padding: var(--section-spacing) 24px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .premium-pattern {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: repeating-linear-gradient(
+          45deg,
+          transparent,
+          transparent 35px,
+          rgba(255, 255, 255, 0.05) 35px,
+          rgba(255, 255, 255, 0.05) 70px
+        );
+      }
+
+      .premium-content {
+        position: relative;
+        z-index: 2;
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 40px;
+        color: var(--crisp-white);
+      }
+
+      .premium-item {
+        text-align: center;
+        padding: 32px;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border-radius: 8px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        transition: all 0.3s ease;
+      }
+
+      .premium-item:hover {
+        background: rgba(255, 255, 255, 0.15);
+        transform: scale(1.05);
+      }
+
+      .premium-icon {
+        font-size: 48px;
+        margin-bottom: 16px;
+        display: inline-block;
+      }
+
+      .premium-item h3 {
+        font-family: "Montserrat", sans-serif;
+        font-size: 22px;
+        font-weight: 600;
+        margin-bottom: 12px;
+      }
+
+      .premium-item p {
+        font-size: 16px;
+        opacity: 0.9;
+        line-height: 1.6;
+      }
+
+      /* CTA Section */
+      .cta-section {
+        background: var(--warm-sand);
+        padding: var(--section-spacing) 24px;
+        text-align: center;
+      }
+
+      .cta-content {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .cta-content h2 {
+        font-family: "Playfair Display", serif;
+        font-size: 48px;
+        font-weight: 700;
+        color: var(--deep-sea);
+        margin-bottom: 24px;
+      }
+
+      .cta-content p {
+        font-size: 20px;
+        color: #666;
+        margin-bottom: 40px;
+        line-height: 1.6;
+      }
+
+      .cta-buttons {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .btn-primary {
+        background: var(--ocean-teal);
+        color: var(--crisp-white);
+        padding: 16px 40px;
+        border-radius: 4px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 18px;
+        transition: all 0.3s ease;
+        display: inline-block;
+        border: 2px solid var(--ocean-teal);
+      }
+
+      .btn-primary:hover {
+        background: var(--deep-sea);
+        border-color: var(--deep-sea);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(44, 95, 95, 0.3);
+      }
+
+      .btn-secondary {
+        background: transparent;
+        color: var(--deep-sea);
+        padding: 16px 40px;
+        border-radius: 4px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 18px;
+        border: 2px solid var(--ocean-teal);
+        transition: all 0.3s ease;
+        display: inline-block;
+      }
+
+      .btn-secondary:hover {
+        background: var(--ocean-teal);
+        color: var(--crisp-white);
+        transform: translateY(-2px);
+      }
+
+      /* Footer */
+      footer {
+        background: var(--deep-sea);
+        color: var(--crisp-white);
+        padding: 60px 24px 40px;
+      }
+
+      .footer-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 40px;
+        margin-bottom: 40px;
+      }
+
+      .footer-section h4 {
+        font-family: "Montserrat", sans-serif;
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 20px;
+      }
+
+      .footer-section p,
+      .footer-section a {
+        color: rgba(255, 255, 255, 0.8);
+        text-decoration: none;
+        line-height: 2;
+        transition: color 0.3s ease;
+      }
+
+      .footer-section a:hover {
+        color: var(--aqua-blue);
+      }
+
+      .footer-bottom {
+        text-align: center;
+        padding-top: 40px;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+        color: rgba(255, 255, 255, 0.6);
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .nav-links {
+          display: none;
+        }
+
+        .hero h1 {
+          font-size: 40px;
+        }
+
+        .hero-subtitle {
+          font-size: 18px;
+        }
+
+        .section-intro h2 {
+          font-size: 32px;
+        }
+
+        .services-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .cta-content h2 {
+          font-size: 36px;
+        }
+
+        .cta-buttons {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .btn-primary,
+        .btn-secondary {
+          width: 100%;
+          max-width: 300px;
+        }
+      }
+
+      /* Scroll Animations */
+      .fade-in {
+        opacity: 0;
+        transform: translateY(30px);
+        transition:
+          opacity 0.8s ease,
+          transform 0.8s ease;
+      }
+
+      .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Decorative Elements */
+      .wave-divider {
+        position: relative;
+        height: 60px;
+        background: var(--crisp-white);
+      }
+
+      .wave-divider svg {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 60px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav>
+      <div class="nav-container">
+        <a href="/" class="logo">LAAT</a>
+        <ul class="nav-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/services">Services</a></li>
+          <li><a href="/destinations">Destinations</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-bg"></div>
+      <div class="hero-pattern"></div>
+      <div class="hero-content">
+        <h1>Your Journey, Our Expertise</h1>
+        <p class="hero-subtitle">
+          From crystal-clear waters to unforgettable adventures, we craft
+          experiences that become lifelong memories
+        </p>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section">
+      <div class="section-intro fade-in">
+        <h2>Discover Your Perfect Escape</h2>
+        <p>
+          Whether you're seeking the ultimate cruise experience or a luxury
+          resort getaway, we handle every detail so you can focus on what
+          matters: making memories.
+        </p>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-card fade-in">
+          <div class="service-icon">
+            <span class="service-icon-emoji">🚢</span>
+          </div>
+          <div class="service-content">
+            <h3>Luxury Cruise Experiences</h3>
+            <p>
+              Set sail on the world's most prestigious cruise lines. From
+              Caribbean sunsets to Mediterranean adventures, we curate voyages
+              that redefine relaxation.
+            </p>
+            <ul class="service-features">
+              <li>Exclusive cabin selections and upgrades</li>
+              <li>Customized shore excursions</li>
+              <li>Specialty dining reservations</li>
+              <li>Onboard credit packages</li>
+              <li>Pre and post-cruise arrangements</li>
+            </ul>
+            <a href="#contact" class="service-btn">Explore Cruises</a>
+          </div>
+        </div>
+
+        <div class="service-card fade-in">
+          <div class="service-icon">
+            <span class="service-icon-emoji">🏝️</span>
+          </div>
+          <div class="service-content">
+            <h3>Premium Resort Getaways</h3>
+            <p>
+              Immerse yourself in paradise at hand-picked resorts where luxury
+              meets authentic local culture. Every stay is tailored to your
+              vision of perfection.
+            </p>
+            <ul class="service-features">
+              <li>Curated resort selections worldwide</li>
+              <li>Room upgrades and special amenities</li>
+              <li>Spa and wellness packages</li>
+              <li>Private beach and pool access</li>
+              <li>Concierge-level trip planning</li>
+            </ul>
+            <a href="#contact" class="service-btn">Find Your Resort</a>
+          </div>
+        </div>
+
+        <div class="service-card fade-in">
+          <div class="service-icon">
+            <span class="service-icon-emoji">🗺️</span>
+          </div>
+          <div class="service-content">
+            <h3>Authentic Excursions</h3>
+            <p>
+              Go beyond the tourist traps. Our authentic excursions connect you
+              with local culture, hidden gems, and experiences you'll never
+              forget.
+            </p>
+            <ul class="service-features">
+              <li>Local expert-guided tours</li>
+              <li>Off-the-beaten-path adventures</li>
+              <li>Cultural immersion experiences</li>
+              <li>Private group arrangements</li>
+              <li>Photography and memory packages</li>
+            </ul>
+            <a href="#contact" class="service-btn">Plan Adventures</a>
+          </div>
+        </div>
+
+        <div class="service-card fade-in">
+          <div class="service-icon">
+            <span class="service-icon-emoji">✨</span>
+          </div>
+          <div class="service-content">
+            <h3>Concierge Travel Planning</h3>
+            <p>
+              From concept to reality, we handle everything. Sit back while we
+              orchestrate every detail of your dream vacation with precision and
+              care.
+            </p>
+            <ul class="service-features">
+              <li>Personalized itinerary creation</li>
+              <li>Flight and transfer coordination</li>
+              <li>Travel insurance consultation</li>
+              <li>24/7 support during your trip</li>
+              <li>Special occasion planning</li>
+            </ul>
+            <a href="#contact" class="service-btn">Start Planning</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Premium Features -->
+    <section class="premium-section">
+      <div class="premium-pattern"></div>
+      <div class="premium-content">
+        <div class="premium-item fade-in">
+          <div class="premium-icon">🏆</div>
+          <h3>Award-Winning Service</h3>
+          <p>
+            Recognized for excellence in personalized travel planning and
+            customer satisfaction
+          </p>
+        </div>
+        <div class="premium-item fade-in">
+          <div class="premium-icon">💎</div>
+          <h3>Exclusive Access</h3>
+          <p>
+            VIP rates, room upgrades, and perks you won't find anywhere else
+          </p>
+        </div>
+        <div class="premium-item fade-in">
+          <div class="premium-icon">🌍</div>
+          <h3>Global Network</h3>
+          <p>Partnerships with top-tier resorts and cruise lines worldwide</p>
+        </div>
+        <div class="premium-item fade-in">
+          <div class="premium-icon">🤝</div>
+          <h3>Personal Touch</h3>
+          <p>
+            Dedicated agents who know your preferences and anticipate your needs
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+      <div class="cta-content fade-in">
+        <h2>Ready to Discover Your Paradise?</h2>
+        <p>
+          Let's turn your travel dreams into reality. Whether it's your first
+          cruise or your fiftieth resort stay, we're here to make it
+          unforgettable.
+        </p>
+        <div class="cta-buttons">
+          <a href="#contact" class="btn-primary">Book Your Adventure</a>
+          <a href="/destinations" class="btn-secondary">View Destinations</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>Lachelle's Adventures and Travels</h4>
+          <p>
+            Creating unforgettable cruise and resort experiences for adventurers
+            of all ages.
+          </p>
+        </div>
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <p><a href="/">Home</a></p>
+          <p><a href="/services">Services</a></p>
+          <p><a href="/destinations">Destinations</a></p>
+          <p><a href="/about">About Us</a></p>
+          <p><a href="/contact">Contact</a></p>
+        </div>
+        <div class="footer-section">
+          <h4>Get in Touch</h4>
+          <p>Email: info@lachelletravels.com</p>
+          <p>Phone: (555) 123-4567</p>
+          <p>Hours: Mon-Fri 9AM-6PM EST</p>
+        </div>
+        <div class="footer-section">
+          <h4>Follow Your Journey</h4>
+          <p><a href="#">Instagram</a></p>
+          <p><a href="#">Facebook</a></p>
+          <p><a href="#">Pinterest</a></p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>
+          &copy; 2026 Lachelle's Adventures and Travels. All rights reserved.
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      // Scroll Animation Observer
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px",
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      }, observerOptions);
+
+      document
+        .querySelectorAll(".fade-in")
+        .forEach((el) => observer.observe(el));
+
+      // Smooth scroll for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
