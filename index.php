@@ -14,8 +14,8 @@
                 <div class="home__container container grid">
                     <div class="home__data">
                         <span class="home__data-subtitle">Discover your place</span>
-                        <h1 class="home__data-title">Explore The <br> Best <b>Beautiful <br> Beaches and Resorts</b></h1>
-                        <a href="https://docs.google.com/forms/d/1w9HZqbpkCg_vaecdt5hmqQkeBLMgZH_1izPG1OfxcM8/prefill" class="button2">Explore Now</a>
+                        <h1 class="home__data-title">Creating <br> Unforgettable <b>Cruise <br> & Resort Experiences</b></h1>
+                        <a href="https://docs.google.com/forms/d/1w9HZqbpkCg_vaecdt5hmqQkeBLMgZH_1izPG1OfxcM8/prefill" class="button2">Discover Your Journey</a>
 
                     </div>
 
@@ -67,12 +67,11 @@
             <section class="about section" id="about">
                 <div class="about__container container grid">
                     <div class="about__data">
-                        <h2 class="section__title about__title">More Information <br> About The Best Beaches</h2>
-                        <p class="about__description">You can find the most beautiful and pleasant places at the best 
-                            prices with special discounts, you choose the place we will guide you all the way to wait, get your 
-                            place now.
+                        <h2 class="section__title about__title">Your Journey, <br> Our Expertise</h2>
+                        <p class="about__description">At Lachelle's Adventures and Travels, we specialize in creating unforgettable cruise and resort experiences. 
+                            Whether you're seeking relaxation on pristine beaches or exciting adventures at sea, we guide you every step of the way to discover your perfect escape.
                         </p>
-                        <a href="https://docs.google.com/forms/d/1w9HZqbpkCg_vaecdt5hmqQkeBLMgZH_1izPG1OfxcM8/prefill" class="button">Reserve a place</a>
+                        <a href="/services" class="button">Explore Our Services</a>
                     </div>
 
                     <div class="about__img">
@@ -89,7 +88,7 @@
             
             <!--==================== DISCOVER ====================-->
             <section class="discover section" id="discover">
-                <h2 class="section__title">Discover the most <br> attractive places</h2>
+                <h2 class="section__title">Discover <br> Your Paradise</h2>
                 
                 <div class="discover__container container swiper-container">
                     <div class="swiper-wrapper">
@@ -138,8 +137,8 @@
 
                 <div class="experience__container container grid">
                     <div align="center" class="">
-                        <h3>
-                            We can help you fit your stay and experience within your allotted budget.
+                        <h3 style="color: var(--crisp-white); font-size: 1.5rem; font-weight: 600; text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">
+                            Premium travel experiences tailored to fit your budget and dreams
                         </h3>
                     </div>
                     <div class="experience__content grid">
